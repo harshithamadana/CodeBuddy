@@ -1,0 +1,27 @@
+# Environment files — NEVER commit these
+.env
+.env.*
+server/.env
+codebuddy/.env
+!.env.example
+!server/.env.example
+
+# Dependencies
+node_modules/
+server/node_modules/
+codebuddy/node_modules/
+
+# Build output
+codebuddy/dist/
+codebuddy/dist-ssr/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
