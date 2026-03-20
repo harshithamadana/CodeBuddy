@@ -6,13 +6,11 @@ A Socratic coding tutor powered by Claude AI. Instead of handing you the answer,
 
 ## Why I built this
 
-I kept running into the same problem when learning to code: I'd Google something, get a Stack Overflow answer, copy it, and move on — without actually understanding what I'd just done. Five minutes later I'd be stuck on the exact same type of problem.
+I built this for students who are learning to code and keep getting stuck on concepts they don't fully understand. The usual options are bad: Google gives you an answer you can copy but not understand, ChatGPT writes the code for you, and documentation assumes you already know what you're doing. None of them actually teach you.
 
-I wanted something that would *teach* me, not just answer me. Something that would ask "okay, but what do you think that line is doing?" instead of immediately dumping a solution in my face.
+CodeBuddy has two modes that solve this differently. Guide mode is a Socratic tutor: it never gives you the answer directly. Instead it asks you questions that push you toward figuring it out yourself, which is the only way something actually sticks. Deep Dive mode is the opposite: if you just need to understand something and don't have time to be guided through it, it explains everything clearly from scratch.
 
-So I built CodeBuddy. It's a chat interface that connects to Claude's API and wraps it in a system prompt that enforces Socratic teaching — the AI is literally instructed to never give you a direct answer on the first message. You pick a topic (Python, JavaScript, debugging, etc.), pick a mode depending on how much help you want, and start asking questions.
-
-This is my first real full-stack project. There's a lot I'd do differently now, but I'm proud of it.
+It connects to Claude's API and uses a layered system prompt that controls how the AI behaves depending on which mode you're in! 
 
 ---
 
