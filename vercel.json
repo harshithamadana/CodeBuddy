@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd codebuddy && npm install && npm run build",
+  "outputDirectory": "codebuddy/dist",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
