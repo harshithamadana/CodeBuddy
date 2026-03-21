@@ -23,9 +23,9 @@ This is always active, no matter what. It tells Claude who it is: a warm, patien
 
 **Layer 2 — The mode modifier**
 This overrides the teaching *style* based on which mode the user selected:
-- **Guide mode** locks everything down — no direct answers, no code, just one guiding question per response. Purely Socratic.
-- **Deep Dive mode** does the opposite — it explicitly un-Socratizes the AI and tells it to give a full explanation with code examples, structured in four parts. The user asked to be taught, so teach them.
-- **Debug mode** forces the scientific method — Claude asks "what did you expect? what happened? where should we look?" and walks the student toward finding the bug themselves.
+- **Guide mode** locks everything down and there are no direct answers, no code, just one guiding question per response. Purely Socratic.
+- **Deep Dive mode** does the opposite, and it explicitly un-Socratizes the AI and tells it to give a full explanation with code examples, structured in four parts. The user asked to be taught, so teach them.
+- **Debug mode** forces the scientific method where Claude asks "what did you expect? what happened? where should we look?" and walks the student toward finding the bug themselves.
 
 **Layer 3 — The subject context**
 Each topic (Python, JavaScript, HTML/CSS, CS concepts, debugging) adds a short sentence to the prompt that tells Claude which domain it's operating in. This keeps analogies and examples relevant.
@@ -112,20 +112,17 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## What I learned
 
-**The hardest part wasn't the code — it was the prompts.**
+**The hardest part wasn't the code, it was the prompts.**
 Getting the AI to behave consistently across three different modes took way more iteration than I expected. The base system prompt kept bleeding into the mode modifiers. I eventually had to restructure it so the base persona only contains universal rules, and each mode modifier is fully self-contained and can override the defaults.
 
 **Environment variables and security.**
-I learned the hard way why you don't hardcode API keys. Setting up `.gitignore` properly, using `dotenv`, making sure the `.env` file loads from an absolute path regardless of where you run the server from — these felt like small details but caused real bugs.
+I learned the hard way why you don't hardcode API keys. Setting up `.gitignore` properly, using `dotenv`, making sure the `.env` file loads from an absolute path regardless of where you run the server from and these felt like small details but caused real bugs.
 
 **Debugging async code is different.**
 When the Express server was returning errors but `console.error` wasn't showing up in my logs, I had to isolate the problem by running the exact same API call as a standalone script. Turned out the background process wasn't capturing stderr the way I expected. The bug was a stale process holding the port — not the code itself.
 
 **CSS is not easy.**
 I spent an embarrassing amount of time on the glowing active-mode buttons. Getting the border color, background opacity, outer glow, inner glow, and text glow all working together and looking right at different screen brightnesses is genuinely hard.
-
-**Building something you'd actually use makes everything more motivating.**
-I use this to study for my CS classes now. That wasn't the original plan, but it's a good sign.
 
 ---
 
